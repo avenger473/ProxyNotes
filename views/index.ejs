@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ProxyNotes</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Hi <%= user %>!!!</h1>
+    <br><hr><br>
+    <form id   =  "uploadForm"
+     enctype   =  "multipart/form-data"
+     action    =  "/api/media/upload"
+     method    =  "post"
+    >
+    <input type="file" name="userVideo" />
+    <input type="submit" value="Upload Video" name="submit">
+    </form>
+
+    <br><hr><br>
+    <ul>
+    <% list.forEach(function( eachlistitem){ %>
+          <li> <a href=<%= eachlistitem.url %>>  <%= eachlistitem.fileName %> </a></li>
+    <% }) %>
+ 
+    </ul>
+  </body>
+</html>
